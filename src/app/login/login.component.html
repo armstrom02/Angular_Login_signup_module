@@ -1,0 +1,58 @@
+<h2 align=center>Login Form</h2>
+<br><br>
+<div id="body">
+<form action="/action_page.php">
+  <div class="imgcontainer">
+    <img src="../assets/avatar2.png" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+  
+    <input type="text" placeholder="Enter Email / Mobile No." id="logtxt" name="email"  required #userid>
+  
+    <input type="password" placeholder="Enter Password" name="psw"  required #password> 
+    <button type="button"  (click)="loginfn(userid.value,password.value)" class="btn btn-primary">Login</button>
+    <a (click)="signInWithFB()"class="fa fa-facebook"></a>
+    <a (click)="signInWithGoogle()" class="fa fa-google"></a>
+    <div align="center"><a href="/signup" >New User ?</a></div>
+  </div>
+</form>
+</div>
+
+ <!-- Modal -->
+ <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <form>
+              <div class="form-row">
+                <div class="col-7">
+                  <input type="text" class="form-control" placeholder="FirstName" #firstname>
+                </div>
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="LastName" #lastname>
+                </div>
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Profession" #profession>
+                </div>
+              </div>
+             
+            </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="addfn(firstname.value,lastname.value,profession.value)">Add changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  
+
+

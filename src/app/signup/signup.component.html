@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-body">
+
+      <form class="signup">
+        <div class="form-group">
+          <label for="disabledTextInput">Name</label>
+          <input type="text" id="disabledTextInput" class="form-control" #name placeholder="Your Name">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address or Mobile No.</label>
+          <input type="text" class="form-control" #userid id="exampleInputEmail1" (userid.enter)="checkinput(box.value)" (blur)="checkinput(userid.value)"
+            placeholder="Enter email or Mobile No.">
+        </div>
+
+        <div *ngIf="this.actotp" class="form-row">
+          <div class="form-group col-md-6">
+            <input type="text" class="form-control" #myotp (keyup)="userotp(myotp.value)" placeholder="Enter OTP">
+          </div>
+          <div class="form-group col-md-6">
+            <button type="button" class="btn btn-light" (click)="requestotp(userid.value)">Send OTP</button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" #password placeholder="Password">
+        </div>
+        <br>
+        <button type="button" class="btn btn-primary btn-lg btn-block" (click)="send(name.value,userid.value,password.value)">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>

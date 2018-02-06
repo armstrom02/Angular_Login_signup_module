@@ -1,0 +1,113 @@
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="{{photourl}}" width="40" height="40" class="d-inline-block align-top" alt="">
+            Welcome {{username}}
+          </a>
+            <a class="nav-link" href="/tabletask">table<span class="sr-only">(current)</span></a>
+         
+      </nav>
+    
+    <!-- First Container -->
+    <div class="container-fluid bg-1 text-center">
+        <h2>Table</h2><br><br>
+        <div id="tablePDF">
+        <table class="table" >
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Profession</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let person of people;let i = index">
+                <th scope="row">{{ i + 1 }}</th>
+                <td>{{ person.firstname }}</td>
+                <td>{{ person.lastname }}</td>
+                <td>{{ person.profession }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    <br>
+
+ 
+
+          <!-- Button trigger modal -->
+<button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenter">
+    Add
+  </button>
+  <button type="button" class="btn btn-dark" (click)="generatepdf()" data-toggle="modal" id="cmd">
+    Genrate PDF
+  </button>
+
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="form-row">
+                  <div class="col-7">
+                    <input type="text" class="form-control" placeholder="FirstName" #firstname>
+                  </div>
+                  <div class="col">
+                    <input type="text" class="form-control" placeholder="LastName" #lastname>
+                  </div>
+                  <div class="col">
+                    <input type="text" class="form-control" placeholder="Profession" #profession>
+                  </div>
+                </div>
+               
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="addfn(firstname.value,lastname.value,profession.value)">Add changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+        </div>
+    
+    <!-- Second Container -->
+    <div class="container-fluid bg-2 text-center">
+
+      
+        <h2>Line Chart</h2>
+<app-chart></app-chart>
+
+       
+    </div>
+    
+    <!-- Third Container (Grid) -->
+    <div class="container-fluid bg-3 text-center">   
+        <h2>Bar Chart</h2>
+      <app-barchart></app-barchart>
+      
+    </div>
+    
+    <div class="container-fluid bg-5 text-center">   
+        <h2>doughnut</h2>
+      <app-doughnut></app-doughnut>
+      
+    </div>
+    <!-- Footer -->
+    <footer class="container-fluid bg-4 text-center">
+      <p>Made By Vivek Singh </p> 
+    </footer>
+    
+    </body>

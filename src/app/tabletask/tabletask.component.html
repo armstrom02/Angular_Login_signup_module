@@ -1,0 +1,72 @@
+<br>
+<br><br>
+<div id="tablePDF">
+  <h4 align="center">Selected Item List</h4>
+  <table class="table" id="myTable" >
+      <thead class="thead-light">
+        <tr>
+          <th scope="col" ><a (click)="onSort(0)">#</a></th>
+          <th scope="col"><a (click)="onSort(0)">First</a></th>
+          <th scope="col"><a (click)="onSort(1)">Last</a></th>
+          <th scope="col"><a (click)="onSort(2)">Profession</a></th>
+          <th>edit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let person of selectedlist;let i = index">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ person.firstname }}</td>
+          <td>{{ person.lastname }}</td>
+          <td>{{ person.profession }}</td>
+          <td> <div class="btn btn-danger" href="path/to/settings" aria-label="Delete" (click)="deletefxn(i,person)">
+            <i class="fa fa-trash-o" aria-hidden="true"></i>
+          </div>
+        </td>
+         
+        </tr>
+      </tbody>
+    </table>
+  </div>
+<br><br>
+
+
+  <div id="tablePDF">
+      <h4 align="center">Available Item List</h4>
+    <table class="table" >
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Profession</th>
+            <th>edit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let person of Availablelist;let i = index">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ person.firstname }}</td>
+            <td>{{ person.lastname }}</td>
+            <td>{{ person.profession }}</td>
+            <td><button type="button" class="btn btn-light"(click)="selectfxn(i,person)">Select</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+   
+   <br>
+   <br>
+   <br>
+
+    <input #search class="search" type="text" placeholder="Search..." (keydown.enter)="onSearch(search.value)">
+    
+    <ng2-smart-table [settings]="settings" [source]="source" ></ng2-smart-table>
+
+    <br>
+    <br>
+    <br>
+
+
+
+
