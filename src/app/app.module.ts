@@ -35,11 +35,11 @@ import { HttpClientModule } from '@angular/common/http';
 const CONFIG = new AuthServiceConfig([
   {
     id: GoogleLoginProvider.PROVIDER_ID,
-    provider: new GoogleLoginProvider('557499716168-19lnmcki5a7ejpppkm72ilf52rs6eoaj.apps.googleusercontent.com')
+    provider: new GoogleLoginProvider('gmail_key')
   },
   {
     id: FacebookLoginProvider.PROVIDER_ID,
-    provider: new FacebookLoginProvider('293184114528709')
+    provider: new FacebookLoginProvider('facebook_key')
   },
 ]);
 
