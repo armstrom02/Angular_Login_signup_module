@@ -25,13 +25,11 @@ export class SocialsignupComponent implements OnInit {
     sessionStorage.clear();
   }
 
-  createSocialUser(name, email, password, ) {
+  createSocialUser(name, email) {
 
     if (this.socialProvider == "FACEBOOK") {
-
-      var obj_email_facebook = { name: name, email: email, password: password, facebook_id: this.socialId };
-
-      this.createusr.create_user(obj_email_facebook).subscribe(data => {
+      var obj_email_facebook = { name: name, email: email, facebook_id: this.socialId };
+      this.createusr.create_social_user(obj_email_facebook).subscribe(data => {
         this.router.navigate(['/login']);
         console.log(data);
         sessionStorage.clear();
@@ -40,9 +38,8 @@ export class SocialsignupComponent implements OnInit {
     }
     else {
 
-      var obj_email_gmail = { name: name, email: email, password: password, google_id: this.socialId };
-
-      this.createusr.create_user(obj_email_gmail).subscribe(data => {
+      var obj_email_gmail = { name: name, email: email, google_id: this.socialId };
+      this.createusr.create_social_user(obj_email_gmail).subscribe(data => {
         this.router.navigate(['/login']);
         console.log(data);
         sessionStorage.clear();

@@ -13,7 +13,6 @@ import { BarchartComponent } from './barchart/barchart.component';
 import { DoughnutComponent } from './doughnut/doughnut.component';
 import { MultiselectComponent } from './multiselect/multiselect.component';
 import { TabletaskComponent } from './tabletask/tabletask.component';
-import { MaterialtableComponent } from './materialtable/materialtable.component';
 import { SignupComponent } from './signup/signup.component';
 import { SocialsignupComponent } from './socialsignup/socialsignup.component';
 
@@ -35,11 +34,11 @@ import { HttpClientModule } from '@angular/common/http';
 const CONFIG = new AuthServiceConfig([
   {
     id: GoogleLoginProvider.PROVIDER_ID,
-    provider: new GoogleLoginProvider('gmail_key')
+    provider: new GoogleLoginProvider('557499716168-19lnmcki5a7ejpppkm72ilf52rs6eoaj.apps.googleusercontent.com')
   },
   {
     id: FacebookLoginProvider.PROVIDER_ID,
-    provider: new FacebookLoginProvider('facebook_key')
+    provider: new FacebookLoginProvider('293184114528709')
   },
 ]);
 
@@ -58,7 +57,6 @@ export function provideConfig() {
     BarchartComponent,
     DoughnutComponent,
     MultiselectComponent,
-MaterialtableComponent,
     TabletaskComponent,
     SignupComponent,
     SocialsignupComponent,

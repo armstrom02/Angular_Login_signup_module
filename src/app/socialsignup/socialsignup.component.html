@@ -1,26 +1,23 @@
-<div id="cont"><br>
-  <h1 align="center">Signup Page</h1>
-  <br>
-  <br>
-  <br>
-  <div id="body">
-  
-  <form>
-      <br>
-      <label for="name">Name</label>
-      <input type="text" id="Name" required #name value="{{socialName}}" readonly><br>
 
-      <label for="email">E-mail </label>
-      <input type="text"  id="userid" required #email  value="{{socialEmail}}"><br>      
-      
-      <label for="phone">Password</label>
-      <input type="password" id="Password" required #password ><br>
-      
-      
-      <div align="center"><input type="button" value="Signup" (click)="createSocialUser(name.value,email.value,password.value)"> <input type="reset" value="Reset"></div>
-      
+
+  <div class="container">
+    <div class="panel panel-default">
+      <div class="panel-body">
   
-  
-  </form>
-  </div>
+        <form class="signup">
+          <div class="form-group">
+            <label for="disabledTextInput">Name</label>
+            <input type="text" id="disabledTextInput" class="form-control" #name value="{{socialName}}" readonly>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" #email value="{{socialEmail}}" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+
+          <br>
+          <button type="button" class="btn btn-primary btn-lg btn-block" (click)="createSocialUser(name.value,email.value)" >Submit</button>
+        </form>
+      </div>
+    </div>
   </div>

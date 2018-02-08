@@ -14,6 +14,12 @@ export class DbconnectService {
     let options = new RequestOptions({headers: headers});
     return this.http.post('http://'+this.myroute+'user',user,options);
   }
+
+  create_social_user(user){
+    let headers = new Headers({'Content-Type':'application/json'});
+    let options = new RequestOptions({headers: headers});
+    return this.http.post('http://'+this.myroute+'user/social',user,options);
+  }
   
   login_user_email(email,password){
 
